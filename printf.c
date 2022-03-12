@@ -30,6 +30,7 @@ int _printf(const char *format, ...)
 				if (print_s[b].l[0] == format[i + 1])
 				{
 					cont += print_s[b].f(lista);
+					i++;
 				}
 			b++;
 			}
@@ -41,6 +42,5 @@ int _printf(const char *format, ...)
 		}
 	i++;
 	}
-	
-	return(cont);
+	return (cont);
 }
