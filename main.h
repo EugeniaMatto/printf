@@ -12,12 +12,14 @@
 typedef struct print_
 {
 	char *l;
-	int (*f)(va_list)
+	int (*f)(va_list);
 } print;
 
-int _putchar(va_list);
+int _putchar(char);
 int _strlen(va_list);
 int print_number(va_list);
+int print_string(va_list);
+int print_char(va_list);
 
 int _printf(const char *format, ...);
 
