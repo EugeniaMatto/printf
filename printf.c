@@ -1,8 +1,7 @@
 #include "main.h"
 /**
- * main - check the code
- * @argc: num args
- * @argv: args
+ * _printf - print chars
+ * @format: format
  * Return: Always 0.
  */
 int _printf(const char *format, ...)
@@ -22,7 +21,9 @@ int _printf(const char *format, ...)
 
 	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1])
+		if (format[i] == '%' && ((format[i + 1] == 'c') ||
+			(format[i + 1] == 's') || (format[i + 1] == 'i') ||
+			(format[i + 1] == 'd')))
 		{
 			b = 0;
 			while (b < 4)
