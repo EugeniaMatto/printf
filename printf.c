@@ -16,7 +16,6 @@ int _printf(const char *format, ...)
 		{"s", print_string},
 		{"i", print_int},
 		{"d", print_int},
-		{NULL, NULL}
 	};
 
 	va_start(lista, format);
@@ -26,7 +25,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1])
 		{
 			b = 0;
-			while (print_s[b].l != NULL)
+			while (b < 4)
 			{
 				if (print_s[b].l[0] == format[i + 1])
 				{
