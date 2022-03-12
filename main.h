@@ -1,6 +1,5 @@
 #ifndef _PRINTF_
 #define _PRINTF_
-#define NULL ((char *)0) 
 #include <stdarg.h>
 
 /**
