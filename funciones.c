@@ -19,16 +19,15 @@ int print_char(va_list args)
  *
  * Return: cantidad de caracteres impresos
  */
-
-int print_string(char *c)
+int print_string(va_list args)
 
 {
-	char *s_aux;
+	char *st_aux;
 	int cant = 0;
 
 	st_aux = va_arg(args, char*);
 	if (!st_aux)
-		st_aux = "(null)";
+		st_aux = "(nil)";
 	while (st_aux[cant])
 	{
 		_putchar(st_aux[cant]);
@@ -46,11 +45,11 @@ int print_string(char *c)
 * Return: cantidad de caracteres impresos
 */
 
-int print_number(va_list)
+int print_number(va_list a)
 {
-	unsigned int num = n;
+	unsigned int num = (unsigned int)va_arg(a, int);
 
-	if (n < 0)
+	if (num < 0)
 	{
 		_putchar('-');
 		num = -num;
@@ -60,5 +59,5 @@ int print_number(va_list)
 		print_number(num / 10);
 
 	_putchar((num % 10) + '0');
-	return _strlen(num);
+	return(_strlen(num));
 }
