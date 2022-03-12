@@ -16,8 +16,7 @@ typedef struct print_
 } print;
 
 int _putchar(char);
-int _strlen(va_list);
-int print_number(va_list);
+int print_int(va_list lista);
 int print_string(va_list);
 int print_char(va_list);
 
