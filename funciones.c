@@ -39,25 +39,38 @@ int print_string(va_list args)
 
 
 
-/**
-* print_number - imprime el entero que le pasan
-* @n: número a imprimir
-* Return: cantidad de caracteres impresos
-*/
-
-int print_number(va_list a)
+int print_int(va_list lista)
 {
-	unsigned int num = (unsigned int)va_arg(a, int);
+        int n = va_arg(lista, int);
 
-	if (num < 0)
-	{
-		_putchar('-');
-		num = -num;
-	}
-
-	if ((num / 10) > 0)
-		print_number(num / 10);
-
-	_putchar((num % 10) + '0');
-	return(_strlen(num));
+int i = 0, aux = 0;
+        unsigned int dc, dig, nat = n;
+        double f = 1;
+        aux = n;
+        while (aux > 0)
+        {
+        i++;
+        aux = aux / 10;
+        }
+        if (n == 0)
+                _putchar('0');
+        else
+        {
+                if (n < 0)
+                {
+                        nat = n * -1;
+                        _putchar('-');
+                }
+                while (f <= nat)
+                        f *= 10;
+                dc = f / 10;
+                while (dc >= 1)
+                {
+                        dig = nat / dc;
+                        _putchar(dig + '0');
+                        nat = (nat - (dc * dig));
+                        dc /= 10;
+                }
+        }
+        return (i);
 }
