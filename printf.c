@@ -1,4 +1,4 @@
-#include "main.h"
+nclude "main.h"
 /**
  * main - check the code
  * @argc: num args
