@@ -15,6 +15,9 @@ int _printf(const char *format, ...)
 		{"s", print_string},
 		{"i", print_int},
 		{"d", print_int},
+		{"x", print_hex},
+		{"X", print_HEX},
+
 		};
 	va_start(lista, format);
 	while (format[i])
@@ -28,7 +31,7 @@ int _printf(const char *format, ...)
 		if ((format[i] == '%') && (pertenece(format[i + 1]) == 1))
 		{
 			b = 0;
-			while (b < 4)
+			while (b < 6)
 			{
 				if (print_s[b].l[0] == format[i + 1])
 				{
