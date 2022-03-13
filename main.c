@@ -32,21 +32,17 @@ int main(void)
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
-    _printf("Address:[%p]\n", addr);
+/*    _printf("Address:[%p]\n", addr); */
     printf("Address:[%p]\n", addr);
     len = _printf("Percent:[%%]\n");
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-    _printf("Unknown:[%r]\n");
-len = _printf("Binary:[%b]\n", 3524);
-_printf("Len:[%d]\n", len);
- len = _printf("Binary:[%b]\n", 35); 
-_printf("Len:[%d]\n", len); 
-  len = _printf("%b\n", 35); 
-  _printf("Len:[%d]\n", len);
-  printf("Len:[%d]\n", len);
-len =  _printf("%u\n", 65535);
-_printf("Len:[%d]\n", len);
-return (0);
+  len =  _printf("----------[%r]-------\n", "naranja");
+   _printf("Len:[%d]\n", len);
+   len = _printf("binary: %b\n", 35);
+    _printf("Len:[%d]\n", len);  
+	len =  _printf("[%R]\n", "naranja mecanica");   
+	 _printf("Len:[%d]\n", len);  
+    return (0);
 }

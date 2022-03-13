@@ -21,7 +21,7 @@ int _putchar(char c)
 int pertenece(char c)
 {
 	int i = 0;
-	char *arr = "bcsdiuoxXSpr";
+	char *arr = "RbcsdiuoxXSpr";
 
 	if (c == '%')
 		return (1);
