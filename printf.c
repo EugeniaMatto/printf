@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		{"o", print_oct},
 		{"%", print_per},
 		{"b", print_binary},
-		{"u", print_unsigned}
+		{"r", print_rev},
 		};
 	va_start(lista, format);
 	while (format[i])
