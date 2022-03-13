@@ -137,15 +137,8 @@ int print_adress(__attribute__((unused)) va_list lista)
  */
 int print_binary(va_list lista)
 {
-	int i, aux, cont = 0, n = va_arg(lista, int);
+	int i, cont = 0, n = va_arg(lista, int);
 	int binary[100];
-
-	aux = n;
-	while (aux > 0)
-	{
-	cont++;
-	aux = aux / 10;
-	}
 
 	for (i = 0; n > 0; i++)
 	{
@@ -156,7 +149,8 @@ int print_binary(va_list lista)
 	for (i = i - 1; i >= 0; i--)
 	{
 		_putchar(binary[i] + '0');
+		cont++;
 	}
 
-	return (aux);
+	return (cont - 1);
 }
