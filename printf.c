@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	int b, i = 0;
-	int cont;
+	int cont = 0;
 	va_list lista;
 
 	print print_s[] = {
@@ -15,15 +15,17 @@ int _printf(const char *format, ...)
 		{"s", print_string},
 		{"i", print_int},
 		{"d", print_int},
-	};
-
+		};
 	va_start(lista, format);
-
 	while (format[i])
 	{
-		if (format[i] == '%' && ((format[i + 1] == 'c') ||
-			(format[i + 1] == 's') || (format[i + 1] == 'i') ||
-			(format[i + 1] == 'd')))
+		if (format[i] == '%' && format[i + 1] == '%')
+		{
+			i += 2;
+			_putchar('%');
+			cont++;
+		}
+		if ((format[i] == '%') && (pertenece(format[i + 1]) == 1))
 		{
 			b = 0;
 			while (b < 4)
@@ -38,8 +40,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-		_putchar(format[i]);
-		cont++;
+			_putchar(format[i]);
+			cont++;
 		}
 	i++;
 	}
