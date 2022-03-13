@@ -152,5 +152,5 @@ int print_binary(va_list lista)
 		cont++;
 	}
 
-	return (cont - 1);
+	return (cont);
 }

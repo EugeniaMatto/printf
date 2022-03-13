@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
 		{"o", print_oct},
 		{"%", print_per},
 		{"b", print_binary},
+		{"u", print_unsigned}
 		};
 	va_start(lista, format);
 	while (format[i])
@@ -27,7 +28,7 @@ int _printf(const char *format, ...)
 		if ((format[i] == '%') && (pertenece(format[i + 1]) == 1))
 		{
 			b = 0;
-			while (b < 9)
+			while (b < 10)
 			{
 				if (print_s[b].l[0] == format[i + 1])
 				{

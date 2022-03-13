@@ -35,3 +35,19 @@ int pertenece(char c)
 
 	return (0);
 }
+
+/**
+ * print_unsigned_r - print unsigned int recursivamente
+ * @n: numero a printear
+ */
+void print_unsigned_r(unsigned int n)
+{
+	if (n < 9)
+	{
+		_putchar(n + '0');
+		return;
+	}
+
+	print_unsigned_r(n / 10);
+	_putchar(n % 10 + '0');
+}

@@ -25,7 +25,8 @@ int print_oct(va_list lista);
 int print_per(va_list lista);
 int print_adress(va_list lista);
 int print_binary(va_list lista);
-
+int print_unsigned(va_list lista);
+void print_unsigned_r(unsigned int n);
 int _printf(const char *format, ...);
 
 #endif
