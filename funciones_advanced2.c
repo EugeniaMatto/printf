@@ -1,22 +1,33 @@
 #include "main.h"
-
 /**
- * print_unsigned - print unsigned int
- * @lista: lista de argumentos
- * Return: nÂº de chars impresos
+ * print_rev - imprime el string al revés
+ * @lista: argumentos
+ *
+ * Return: 0
  */
-int print_unsigned(va_list lista)
+
+int print_rev(va_list lista)
+
+
 {
-	int i = 0;
-	unsigned int n = va_arg(lista, unsigned int);
+	char *s;
+	int cant = 0;
 
-	print_unsigned_r(n);
+	s = va_arg(lista, char*);
 
-	while (n > 0)
-	{
-	i++;
-	n = n / 10;
-	}
 
-	return (i);
+
+
+int c = 0;
+
+while (c >= 0)
+{
+if (s[c] == '\0')
+break;
+c++;
+}
+
+for (c--; c >= 0; c--)
+_putchar(s[c]);
+
 }
