@@ -14,14 +14,17 @@ int _putchar(char c)
 }
 
 /**
- * pertenece - identifica si el char es una de las letras admitidas
+ * pertenece - identifica si el char es una de las letras que tiene funcion
  * @c: letra de format, siguiente a un %
  * Return: 1 si pertenece, 0 caso contrario
  */
 int pertenece(char c)
 {
 	int i = 0;
-	char *arr = "csdibuoxXSp";
+	char *arr = "bcsdiuoxXSp";
+
+	if (c == '%')
+		return (1);
 
 	while (arr[i])
 	{

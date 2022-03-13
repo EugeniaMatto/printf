@@ -128,3 +128,35 @@ int print_adress(__attribute__((unused)) va_list lista)
 	_putchar('0');
 	return (1);
 }
+
+/**
+ * print_binary - convierte int a binario e imprime
+ * @lista: argumentos
+ *
+ * Return: cant de char impresos
+ */
+int print_binary(va_list lista)
+{
+	int i, aux, cont = 0, n = va_arg(lista, int);
+	int binary[100];
+
+	aux = n;
+	while (aux > 0)
+	{
+	cont++;
+	aux = aux / 10;
+	}
+
+	for (i = 0; n > 0; i++)
+	{
+		binary[i] = n % 2;
+		n = n / 2;
+	}
+
+	for (i = i - 1; i >= 0; i--)
+	{
+		_putchar(binary[i] + '0');
+	}
+
+	return (aux);
+}
