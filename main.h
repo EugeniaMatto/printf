@@ -18,7 +18,7 @@ int _putchar(char);
 int print_int(va_list lista);
 int print_string(va_list);
 int print_char(va_list);
-
+int pertenece(char);
 int _printf(const char *format, ...);
 
 
