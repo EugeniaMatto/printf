@@ -22,8 +22,9 @@ int pertenece(char);
 int print_hex(va_list lista);
 int print_HEX(va_list lista);
 int print_oct(va_list lista);
+int print_per(va_list lista);
+int print_adress(va_list lista);
+
 int _printf(const char *format, ...);
-
-
 
 #endif

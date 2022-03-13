@@ -17,17 +17,13 @@ int _printf(const char *format, ...)
 		{"d", print_int},
 		{"x", print_hex},
 		{"X", print_HEX},
-		{"o", print_oct}
+		{"o", print_oct},
+		{"%", print_per},
+		{"p", print_adress},
 		};
 	va_start(lista, format);
 	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1] == '%')
-		{
-			i += 2;
-			_putchar('%');
-			cont++;
-		}
 		if ((format[i] == '%') && (pertenece(format[i + 1]) == 1))
 		{
 			b = 0;
@@ -48,5 +44,6 @@ int _printf(const char *format, ...)
 		}
 	i++;
 	}
+	_putchar('-');
 	return (cont);
 }
