@@ -12,7 +12,7 @@ int print_rev(va_list lista)
 	int c = 0, cant = 0;
 
 	s = va_arg(lista, char*);
-	
+
 	if (s)
 	{
 		while (c >= 0)
@@ -101,7 +101,7 @@ int print_non_print(va_list lista)
 
 {
 	char *s;
-	int resto, num_d, i , cont = 0;
+	int resto, num_d, i, cont = 0;
 	int n_h[100];
 
 	s = va_arg(lista, char*);
@@ -133,7 +133,6 @@ int print_non_print(va_list lista)
 				_putchar(n_h[i]);
 			}
 			i = 0;
-			
 		}
 		else
 			_putchar(s[cont]);
