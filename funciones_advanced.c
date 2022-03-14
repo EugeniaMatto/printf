@@ -9,7 +9,7 @@ int print_hex(va_list lista)
 {
 	int resto, i = 0, cont = 0;
 	char n_h[100];
-	unsigned int num_d = va_arg(lista, unsigned int);
+	unsigned int num_d = (unsigned int) va_arg(lista, unsigned int);
 
 	if (num_d == 0)
 	{
@@ -125,16 +125,18 @@ int print_oct(va_list lista)
  */
 int print_adress(__attribute__((unused)) va_list lista)
 {
-	int i = 0;
-	char *p = (char *) va_arg(lista, char *);
+	int cont = 0, i = 0;
+	char *s = "0x7ffe";
 
-	while (p[i])
+	while (s[i])
 	{
-		_putchar(p[i]);
-		i++;
+	_putchar(s[i]);
+	cont++;
+	i++;
 	}
 
-	return (i);
+	 cont += print_hex(lista);
+	return (cont);
 }
 
 /**

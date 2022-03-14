@@ -66,7 +66,7 @@ int print_rot13(va_list lista)
 	for (i = 0; a[i] != '\0'; i++)
 	{
 		c = a[i];
-		if ((c >= 'A' && c <= 'Z')||(c >= 'a' && c <= 'z'))
+		if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		{
 			while ((a[i] >= 'n' && a[i] <= 'z') || (a[i] >= 'N' && a[i] <= 'Z'))
 			{
