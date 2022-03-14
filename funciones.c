@@ -65,6 +65,12 @@ int print_int(va_list lista)
 		i++;
 		num = -num;
 	}
+	
+	if (num >= 0 && num <= 9)
+	{
+		_putchar(num + '0');
+		return (1);
+	}
 
 	n = (unsigned int) num;
 
