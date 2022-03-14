@@ -131,9 +131,9 @@ int print_adress(__attribute__((unused)) va_list lista)
 
 	while (s[i])
 	{
-	_putchar(s[i]);
-	cont++;
-	i++;
+		_putchar(s[i]);
+		cont++;
+		i++;
 	}
 
 	 cont += print_hex(lista);
@@ -148,8 +148,8 @@ int print_adress(__attribute__((unused)) va_list lista)
  */
 int print_binary(va_list lista)
 {
-	int i, cont = 0, n = va_arg(lista, int);
-	int binary[100];
+	int i, cont = 0;
+	unsigned int n = (va_arg(lista, unsigned int)), binary[100];
 
 	for (i = 0; n > 0; i++)
 	{
