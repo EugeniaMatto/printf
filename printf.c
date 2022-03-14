@@ -23,7 +23,9 @@ int _printf(const char *format, ...)
 		{"r", print_rev},
 		{"u", print_unsigned},
 		{"p", print_adress},
-		{"R", print_rot13}
+		{"R", print_rot13},
+		{"S", print_non_print}
+
 		};
 	va_start(lista, format);
 	while (format[i])
@@ -31,7 +33,7 @@ int _printf(const char *format, ...)
 		if ((format[i] == '%') && (pertenece(format[i + 1]) == 1))
 		{
 			b = 0;
-			while (b < 13)
+			while (b < 14)
 			{
 				if (print_s[b].l[0] == format[i + 1])
 				{
