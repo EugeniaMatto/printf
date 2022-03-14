@@ -29,6 +29,7 @@ int print_rev(va_list lista);
 int print_unsigned(va_list lista);
 void print_unsigned_r(unsigned int n);
 int print_rot13(va_list lista);
+int print_non_print(va_list lista);
 
 int _printf(const char *format, ...);
 
