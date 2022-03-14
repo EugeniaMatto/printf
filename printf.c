@@ -9,10 +9,16 @@ int _printf(const char *format, ...)
 	int i = 0, cont = 0;
 	va_list lista;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(lista, format);
 
 	while (format[i])
 	{
+		if ((format[i] == '%') && (format[i + 1] == '\0'))
+			return (-1);
+
 		if ((format[i] == '%') && (pertenece(format[i + 1]) == 1))
 		{
 			cont += get_funcion(format[i + 1], lista);
@@ -20,8 +26,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(format[i]);
-			cont++;
+				_putchar(format[i]);
+				cont++;
 		}
 	i++;
 	}

@@ -41,7 +41,7 @@ int print_string(va_list lista)
 	st_aux = va_arg(lista, char *);
 
 	if (st_aux == NULL)
-		st_aux = "(nil)";
+		st_aux = "(null)";
 
 	while (st_aux[cant])
 	{
