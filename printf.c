@@ -6,9 +6,37 @@
  */
 int _printf(const char *format, ...)
 {
-	int b, i = 0;
-	int cont = 0;
+	int i = 0, cont = 0;
 	va_list lista;
+
+	va_start(lista, format);
+
+	while (format[i])
+	{
+		if ((format[i] == '%') && (pertenece(format[i + 1]) == 1))
+		{
+			cont += get_funcion(format[i + 1], lista);
+			i++;
+		}
+		else
+		{
+			_putchar(format[i]);
+			cont++;
+		}
+	i++;
+	}
+	return (cont);
+}
+
+/**
+ * get_funcion - obtiene la funcion correspondiente a la letra
+ * @l: char a evaluar
+ * @lista: lista argumentos
+ * Return: cant de chars impresos por la funcion
+ */
+int get_funcion(char l, va_list lista)
+{
+	int b = 0, cont = 0;
 
 	print print_s[] = {
 		{"c", print_char},
@@ -25,30 +53,18 @@ int _printf(const char *format, ...)
 		{"p", print_adress},
 		{"R", print_rot13},
 		{"S", print_non_print}
-
 		};
-	va_start(lista, format);
-	while (format[i])
+
+	while (b < 14)
 	{
-		if ((format[i] == '%') && (pertenece(format[i + 1]) == 1))
+		if (print_s[b].l[0] == l)
 		{
-			b = 0;
-			while (b < 14)
-			{
-				if (print_s[b].l[0] == format[i + 1])
-				{
-					cont += print_s[b].f(lista);
-					i++;
-				}
-			b++;
-			}
+			cont += print_s[b].f(lista);
+			break;
 		}
-		else
-		{
-			_putchar(format[i]);
-			cont++;
-		}
-	i++;
+	b++;
 	}
+
 	return (cont);
 }
+
