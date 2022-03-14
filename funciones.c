@@ -20,7 +20,7 @@ int print_per(__attribute__((unused)) va_list lista)
  */
 int print_char(va_list lista)
 {
-	char c = va_arg(lista, int);
+	char c = (char) va_arg(lista, int);
 
 	_putchar(c);
 	return (1);
