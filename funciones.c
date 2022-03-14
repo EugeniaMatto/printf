@@ -49,49 +49,33 @@ int print_string(va_list lista)
 
 
 /**
- * print_int - imprime el número recibido
- * @lista: argumentos
- *
- * Return: cantidad de caracteres impresos
+ * print_int - print int
+ * @lista: lista de argumentos
+ * Return: n de chars impresos
  */
-
-
 int print_int(va_list lista)
 {
-	int n = va_arg(lista, int);
-	int i = 0, aux = 0;
-	unsigned int dc, dig, nat = n;
-	double f = 1;
+	unsigned int n;
+	int i = 0;
+	int num = va_arg(lista, int);
 
-	aux = n;
-
-
-	while (aux > 0)
+	if (num < 0)
 	{
-	i++;
-	aux = aux / 10;
+		_putchar('-');
+		i++;
+		num = -num;
 	}
-	if (n == 0)
-		_putchar('0');
-	else
+
+	n = (unsigned int) num;
+
+	print_unsigned_r(n);
+
+	while (n > 0)
 	{
-		if (n < 0)
-		{
-			nat = n * -1;
-			_putchar('-');
-		}
-		while (f <= nat)
-			f *= 10;
-		dc = f / 10;
-		while (dc >= 1)
-		{
-			dig = nat / dc;
-			_putchar(dig + '0');
-			nat = (nat - (dc * dig));
-			dc /= 10;
-		}
+		i++;
+		n = n / 10;
 	}
+
 	return (i);
 }
-
 
