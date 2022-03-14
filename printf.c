@@ -65,6 +65,6 @@ int get_funcion(char l, va_list lista)
 	b++;
 	}
 
-	return (cont);
+	return (cont - 1);
 }
 

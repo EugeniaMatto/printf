@@ -49,7 +49,7 @@ int print_string(va_list lista)
 		cant++;
 	}
 
-	return (cant);
+	return (cant + 1);
 }
 
 
