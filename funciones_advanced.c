@@ -150,12 +150,11 @@ int print_binary(va_list lista)
 {
 	int i, cont = 0;
 	unsigned int n = (va_arg(lista, unsigned int)), binary[100];
-	
-	if (n == 4294967295)
+
+	if (n == 0)
 	{
-		for (i = 0; i < 32; i++)
-		_putchar(1);
-	return (32);
+		_putchar(48);
+		return (1);
 	}
 
 	for (i = 0; n > 0; i++)
