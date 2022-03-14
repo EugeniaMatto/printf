@@ -20,18 +20,10 @@ int print_per(__attribute__((unused)) va_list lista)
  */
 int print_char(va_list lista)
 {
-	char *p;
 	char c = va_arg(lista, int);
 
-	p = &c;
-
-	if (p != NULL)
-	{
 		_putchar(c);
 		return (1);
-	}
-	else
-		return (0);
 }
 
 /**
@@ -78,7 +70,7 @@ int print_int(va_list lista)
 		i++;
 		num = -num;
 	}
-	
+
 	if (num >= 0 && num <= 9)
 	{
 		_putchar(num + '0');
