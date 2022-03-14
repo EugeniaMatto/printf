@@ -20,10 +20,10 @@ int print_hex(va_list lista)
 	{
 	resto = num_d % 16;
 
-	if (resto < 10)
-		resto = resto + 48;
-	else
-		resto = resto + 87;
+		if (resto < 10)
+			resto = resto + 48;
+		else
+			resto = resto + 87;
 
 		n_h[i] = resto;
 		i++;
