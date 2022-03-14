@@ -63,7 +63,7 @@ int print_int(va_list lista)
 	unsigned int n;
 	int i = 0;
 	int num = va_arg(lista, int);
-
+	
 	if (num < 0)
 	{
 		_putchar('-');

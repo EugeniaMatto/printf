@@ -7,18 +7,19 @@
  */
 int print_hex(va_list lista)
 {
-	int resto, i = 0, cont = 0;
+	int i = 0, cont = 0, resto;
 	char n_h[100];
 	unsigned int num_d = (unsigned int) va_arg(lista, unsigned int);
 
 	if (num_d == 0)
 	{
-	_putchar('0');
-	return (1);
+		_putchar('0');
+		return (1);
 	}
+
 	while (num_d != 0)
 	{
-	resto = num_d % 16;
+		resto = num_d % 16;
 
 		if (resto < 10)
 			resto = resto + 48;
@@ -32,8 +33,8 @@ int print_hex(va_list lista)
 
 	for (i = i - 1; i >= 0; i--)
 	{
-	 _putchar(n_h[i]);
-	cont++;
+		_putchar(n_h[i]);
+		cont++;
 	}
 	return (cont);
 }
@@ -52,17 +53,19 @@ int print_HEX(va_list lista)
 
 	if (num_d == 0)
 	{
-	_putchar('0');
-	return (1);
+		_putchar('0');
+		return (1);
 	}
 
 	while (num_d != 0)
 	{
 		resto = num_d % 16;
+
 		if (resto < 10)
 			resto = resto + 48;
 		else
 			resto = resto + 55;
+
 		n_h[i] = resto;
 		i++;
 		num_d = num_d / 16;
@@ -95,7 +98,7 @@ int print_oct(va_list lista)
 
 	if (n == 0)
 	{
-		 _putchar('0');
+		_putchar('0');
 		return (1);
 	}
 

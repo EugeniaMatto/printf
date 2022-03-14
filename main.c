@@ -298,5 +298,6 @@ int main(void)
 		printf ("\n\n30 CASES CHECKED, %d ERRORS.\n\n", cont);
 		RESET;
 	}
+	_printf("\n\n\n binary -> %b \n", 0);
 	return (cont);
 }
