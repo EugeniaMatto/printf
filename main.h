@@ -16,12 +16,15 @@ typedef struct print_
 	int (*f)(va_list);
 } print;
 
+int print_base(void);
+int print_nil(void);
 int get_funcion(char, va_list);
 int _putchar(char);
 int print_int(va_list lista);
 int print_string(va_list);
 int print_char(va_list);
 int pertenece(char);
+int print_hexadecimal(va_list, int);
 int print_hex(va_list lista);
 int print_HEX(va_list lista);
 int print_oct(va_list lista);

@@ -34,6 +34,7 @@ int output(int a, int b)
 int main(void)
 {
 	int a, b, cont = 0;
+	void *addr;
 	BLUE;
 	printf("\nTEST WITHOUT ARGUMENTS:\n\n");
 	RESET;
@@ -299,5 +300,21 @@ int main(void)
 		RESET;
 	}
 	_printf("\n\n\n binary -> %b \n", 0);
+
+	 _printf("\n\n\n hexa -> %x \n", 0); 
+	  _printf("\n\n\n hexa -> %x \n", UINT_MAX); 
+
+	   _printf("\n\n\n HEXA -> %X \n", 0); 
+	    _printf("\n\n\n HEXA -> %X \n", UINT_MAX); 
+
+		 _printf("\n\n\n octa -> %o \n", 0); 
+		  _printf("\n\n\n octa -> %o \n", UINT_MAX); 
+
+ addr = (void *)0x7ffe637541f0;
+
+		   _printf("\n\n\n ADRESS -> %p \n", addr); 
+		    _printf("\n\n\n ADRESS -> %p \n", NULL); 
+			printf("\n\n\n ADRESS -> %p \n", addr); 
+			  printf("\n\n\n ADRESS -> %p \n", NULL); 
 	return (cont);
 }

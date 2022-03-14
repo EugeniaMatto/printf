@@ -1,36 +1,47 @@
 #include "main.h"
 /**
- * print_hex - imprime en hexadecimal (minscula)
+ * print_hexadecimal - imprime en hexadecimal
  * @lista: argumentos
+ * @tipo: 3 si imprime adress,2 si impr. hexa en minus,1 si imp. hexa en MAYUS
  *
  * Return: cantidad de caracteres impresos
  */
-int print_hex(va_list lista)
+int print_hexadecimal(va_list lista, int tipo)
 {
-	int i = 0, cont = 0, resto;
+	int i = 0, cont = 0, resto, suma = 87;
 	char n_h[100];
-	unsigned int num_d = (unsigned int) va_arg(lista, unsigned int);
+	unsigned long num_d = (unsigned long) va_arg(lista, unsigned long);
+
+	if (tipo == 3 && num_d > 0)
+		cont += print_base();
 
 	if (num_d == 0)
 	{
-		_putchar('0');
-		return (1);
+		if (tipo == 3)
+		{
+			return (cont + print_nil());
+		}
+		else
+		{
+			_putchar('0');
+			return (1);
+		}
 	}
+	if (tipo == 1)
+		suma = 55;
 
 	while (num_d != 0)
 	{
 		resto = num_d % 16;
-
 		if (resto < 10)
 			resto = resto + 48;
 		else
-			resto = resto + 87;
+			resto = resto + suma;
 
 		n_h[i] = resto;
 		i++;
 		num_d = num_d / 16;
 	}
-
 	for (i = i - 1; i >= 0; i--)
 	{
 		_putchar(n_h[i]);
@@ -38,48 +49,6 @@ int print_hex(va_list lista)
 	}
 	return (cont);
 }
-
-/**
- * print_HEX - imprime en hexadecimal (mayúscula)
- * @lista: argumentos
- *
- * Return: cantidad de caracteres impresos
- */
-int print_HEX(va_list lista)
-{
-	int resto, i = 0, cont = 0;
-	char n_h[100];
-	unsigned int num_d = va_arg(lista, unsigned int);
-
-	if (num_d == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
-
-	while (num_d != 0)
-	{
-		resto = num_d % 16;
-
-		if (resto < 10)
-			resto = resto + 48;
-		else
-			resto = resto + 55;
-
-		n_h[i] = resto;
-		i++;
-		num_d = num_d / 16;
-	}
-
-	for (i = i - 1; i >= 0; i--)
-	{
-		_putchar(n_h[i]);
-		cont++;
-	}
-
-	return (cont);
-}
-
 
 /**
  * print_oct - imprime en octal
@@ -129,18 +98,7 @@ int print_oct(va_list lista)
  */
 int print_adress(__attribute__((unused)) va_list lista)
 {
-	int cont = 0, i = 0;
-	char *s = "0x7ffe";
-
-	while (s[i])
-	{
-		_putchar(s[i]);
-		cont++;
-		i++;
-	}
-
-	 cont += print_hex(lista);
-	return (cont);
+	return (print_hexadecimal(lista, 3));
 }
 
 /**
