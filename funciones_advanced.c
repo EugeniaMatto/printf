@@ -38,7 +38,7 @@ int print_hex(va_list lista)
 }
 
 /**
- * print_HEX - imprime en hexadecimal (mayscula)
+ * print_HEX - imprime en hexadecimal (mayúscula)
  * @lista: argumentos
  *
  * Return: cantidad de caracteres impresos
