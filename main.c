@@ -52,5 +52,17 @@ int main(void)
     _printf("Len:[%d]\n", len);  
 	len =  _printf("[%R]\n", "naranja mecanica");   
 	 _printf("Len:[%d]\n", len);  
+	 printf("%d\n", INT_MAX);
+		printf("%d\n", INT_MIN);
+		printf("%i\n", INT_MAX);
+			printf("%i\n", INT_MIN);
+			_printf("%d\n", INT_MAX);
+				_printf("%d\n", INT_MIN);
+				_printf("%i\n", INT_MAX);
+					_printf("%i\n", INT_MIN);
+
+					_printf(">%s\n", NULL);
+					     _printf(">%c\n", NULL); 
+						 _printf(">%c\n", 120);
     return (0);
 }

@@ -20,8 +20,18 @@ int print_per(__attribute__((unused)) va_list lista)
  */
 int print_char(va_list lista)
 {
-	_putchar(va_arg(lista, int));
-	return (1);
+	char *p;
+	char c = va_arg(lista, int);
+
+	p = &c;
+
+	if (p != NULL)
+	{
+		_putchar(c);
+		return (1);
+	}
+	else
+		return (0);
 }
 
 /**
@@ -36,14 +46,17 @@ int print_string(va_list lista)
 	char *st_aux;
 	int cant = 0;
 
-	st_aux = va_arg(lista, char*);
-	if (!st_aux)
+	st_aux = va_arg(lista, char *);
+
+	if (st_aux == NULL)
 		st_aux = "(nil)";
+
 	while (st_aux[cant])
 	{
 		_putchar(st_aux[cant]);
 		cant++;
 	}
+
 	return (cant);
 }
 
