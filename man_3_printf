@@ -9,86 +9,63 @@ SYNOPSIS
 
 DESCRIPTION
 
-	The function "_printf" is a variadic function that produces output according
-	to a format. This function writes the output to stdout (standard output).
+_printf
+
+Prints format string specified by user.
+The function writes to stdout
+
+
+_printf() takes a string as format input, and a variable list of arguments.
+
+Arguments are in form of characters, numbers, or strings.
+It iterates every character of the array and copies it to the standard output,
+when a "%" symbol is reached, _printf will check if the next character is a format specifier
+If it's is, then it will call the respective function to format as many arguments passed through the va_list
+On successful return _printf returns the number of characters printed (excluding the null byte used to end output to strings)
+
+
 	
-	The format string controls the output given, it specifies how subsequent
-	arguments are converted for stdout.
+	Format of the format string
+The format string is composed of 0 or more directives (ordinary characters that are not %), which are copied to the output stream. The format string is also composed of conversion specifications, each of which result in fetching zero or more subsequent arguments. Each conversion specification is introduced by the character % and ends with the conversion specifier.
+The argument must correspond properly with the conversion specifier. By default, the arguments are used in the order given.
 
-Format of the format string
+The conversion specifier
 
-	This format string is a character string. It is composed of zero or various 
-	directives, these are: normal characters excluding "%" which are copied exact 
-	the same to the output; and the conversion specifications result adding zero
-	or more arguments.
+A character that specifies the type of conversion to be applied. The conversion specifiers and their meanings are:
 
-Conversion specification (%)
+c
+The int argument is converted to an unsigned char, then the resulting character is written
 
-	Each conversion specification is added using the character % and ends with a 
-	conversion specifier.
+s
+The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to a terminating null byte, but do ot include the terminating null byte.
 
-Syntax example:
+S
+Prints a string. Non printable characters are printed as "\x" followed by their ASCII values in two digit hexadecimal
 
-	_printf("My name is %s.", str); ---> My name is <str content>.
+d, i
+The int argument is converted to signed decimal notation.
 
-	The arguments must correspond with the conversion specifier order. The arguments
-	are used int the order given.
+x, X
+The unsigned int argument is converted to unsigned lowercase hexadecimal notation(x), or unsigned uppercase hexadecimal notation(X).
 
-Flags
+u
+The unsigned int argument is converted to unsigned decimal notation
 
-	The conversion specifier % can be followed by zero or more of these flags:
+o, b
+The unsigned int argument is converted to unsigned octal notation(o) or binary notation(b).
 
-	#	The value should be converted to an "alternate form".  For
-      	o conversions, the first character of the output string is
-      	made zero (by prefixing a 0 if it was not zero already).
-       	For x and X conversions, a nonzero result has the string
-        	"0x" (or "0X" for X conversions) is prepended to it.
+p
+Address is printed in hexadecimal.
 
-	+	A sign (+ or -) should always be placed before a number
-            produced by a signed conversion.  By default, a sign is
-            used only for negative numbers.  A + overrides a space if
-            both are used.
+r
+Prints a string in reverse.
 
-Conversion specifiers
-	
-	Is a character followed after the % character that specifies the type of 
-	conversion to be applied. The conversion specifiers to _printf are:
+R
+Prints a string converted to rot13
 
-	d, i	The int argument is converted to signed decimal notation.
-            The precision, if any, gives the minimum number of digits
-            that must appear.
+%
+A '%' is written but no argument is converted. The complete version specification is '%%'
 
-	o, u, x , X
-		The unsigned int argument is converted to unsigned octal
-             (o), unsigned decimal (u), or unsigned hexadecimal (x and
-             X) notation.  The letters abcdef are used for x
-             conversions; the letters ABCDEF are used for X
-             conversions.  The precision, if any, gives the minimum
-             number of digits that must appear.
+AUTHOR
 
-	s	 The const char * argument is expected to be a pointer to
- 		 an array of character type (pointer to a string).  Characters
-             from the array are written up to (but not including) a 
-             terminating null byte ('\0').
-
-	p	The void * pointer argument is printed in hexadecimal.
-
-
-	c	The char argument is expected to be the character to be printed.
-
-	r	The char * is expected to be a pointer to a string. The characters
-		from the array are printed in reverse excluding the null byte ('\0').
-
-	R (ROT-13)
-		The char * is expected to be a pointer to a string. Characters are
-		printed using ROT 13 encryption.
-
-	S	The char * is expected to be an array of chars. Prints a string
-		with non printable characters i.e: "\".
-
-	b	The int is expected to be an int. Prints the number in binary.
-
-RETURN VALUE
-
-	On successful return, the _printf function returns the number of characters
-	printed, excluding the null byte ('\0') used to print strings.
+Eugenia Matto && Martín Liporace
