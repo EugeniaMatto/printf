@@ -56,7 +56,7 @@ int print_string(va_list lista)
 /**
  * print_int - print int
  * @lista: lista de argumentos
- * Return: n de chars impresos
+ * Return: número de caracteres impresos
  */
 int print_int(va_list lista)
 {
