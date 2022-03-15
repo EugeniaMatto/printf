@@ -52,13 +52,13 @@ int print_nil(void)
  * print_0 - imprime \0x0
  * Return: cantidad de caracteres impresos
  */
-int print_0(void)
+int print_null(void)
 {
         int i;
-        char *str = "";
+        char *str = "(null)";
 
         for (i = 0; str[i]; i++)
                 _putchar(str[i]);
 
-        return (-1);
+        return (6);
 }

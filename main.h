@@ -17,7 +17,7 @@ typedef struct print_
 } print;
 
 
-int print_0(void);
+int print_null(void);
 int print_base(void);
 int print_nil(void);
 int get_funcion(char, va_list);
