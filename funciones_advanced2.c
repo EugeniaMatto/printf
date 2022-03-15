@@ -123,20 +123,19 @@ int print_non_print(va_list lista)
 				i++;
 				num_d = num_d / 16;
 			}
-			_putchar('\\');
-			_putchar('x');
+			cont += _putchar('\\');
+			cont += _putchar('x');
+			cont += _putchar('0');
 			i = i - 1;
-			if (i < 1)
-				_putchar('0');
 			for (; i >= 0; i--)
 			{
-				_putchar(n_h[i]);
+				cont += _putchar(n_h[i]);
 			}
 			i = 0;
 		}
 		else
-			_putchar(s[cont]);
-	cont++;
+			cont += _putchar(s[cont]);
+	
 	}
 	return (cont);
 }
