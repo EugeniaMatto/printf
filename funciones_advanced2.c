@@ -110,7 +110,7 @@ int print_non_print(va_list lista)
 		return (print_0());
 	while (s[cont])
 	{
-		if ((s[cont] > 0 && s[cont] < 32) || (s[cont] >= 127))
+		if ((s[cont] > 0 && s[cont] < 32))
 		{
 			num_d = (unsigned int)s[cont];
 			i = 0;
