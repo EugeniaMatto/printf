@@ -101,8 +101,9 @@ int print_non_print(va_list lista)
 
 {
 	char *s;
-	int resto, num_d, i, cont = 0;
-	int n_h[100];
+	int resto, i, cont = 0, chars = 0;
+	char n_h[100];
+	unsigned int num_d = 0;
 
 	s = va_arg(lista, char*);
 	if (!s)
@@ -111,7 +112,8 @@ int print_non_print(va_list lista)
 	{
 		if ((s[cont] > 0 && s[cont] < 32) || (s[cont] >= 127))
 		{
-			num_d = (int)s[cont];
+			num_d = (unsigned int)s[cont];
+			i = 0;
 			while (num_d != 0)
 			{
 				resto = num_d % 16;
@@ -119,23 +121,23 @@ int print_non_print(va_list lista)
 					resto = resto + 48;
 				else
 					resto = resto + 55;
+
 				n_h[i] = resto;
 				i++;
 				num_d = num_d / 16;
 			}
-			cont += _putchar('\\');
-			cont += _putchar('x');
-			cont += _putchar('0');
-			i = i - 1;
-			for (; i >= 0; i--)
+			chars += _putchar('\\');
+			chars += print_base();
+
+			for (i = i - 1; i >= 0; i--)
 			{
-				cont += _putchar(n_h[i]);
+				chars += _putchar(n_h[i]);
 			}
-			i = 0;
 		}
 		else
-			cont += _putchar(s[cont]);
-	
+			chars += _putchar(s[cont]);
+
+		cont++;
 	}
 	return (cont);
 }

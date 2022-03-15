@@ -81,5 +81,11 @@ int main(void)
 
 	 printf("\nlen = %d,len2 = %d\n", len, len2);
 	_printf("\n----------------------\n");
+
+ len = _printf("%S\n", "Best\nSchool");
+        len2 = _printf("%S\n", "Best\nSchool    ");
+        _printf("\nlen = %d,len2 = %d\n", len, len2);
+
+
 	return (0);
 }
