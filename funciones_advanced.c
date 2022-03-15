@@ -50,7 +50,7 @@ int print_hexadecimal(va_list lista, int tipo)
 
 
 /**
- * print_oct - imprime en octal
+ * print_oct - imprime el entero recibido en octal
  * @lista: argumentos
  *
  * Return: cantidad de caracteres impresos
