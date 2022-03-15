@@ -29,7 +29,6 @@ int print_hexadecimal(va_list lista, int tipo)
 	}
 	if (tipo == 1)
 		suma = 55;
-
 	while (num_d != 0)
 	{
 		resto = num_d % 16;
@@ -37,7 +36,6 @@ int print_hexadecimal(va_list lista, int tipo)
 			resto = resto + 48;
 		else
 			resto = resto + suma;
-
 		n_h[i] = resto;
 		i++;
 		num_d = num_d / 16;
@@ -49,6 +47,7 @@ int print_hexadecimal(va_list lista, int tipo)
 	}
 	return (cont);
 }
+
 
 /**
  * print_oct - imprime en octal
