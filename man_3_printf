@@ -1,0 +1,94 @@
+NAME
+	_printf
+
+SYNOPSIS
+	
+	#include "main.h"
+
+	int _printf(char *format, ...)
+
+DESCRIPTION
+
+	The function "_printf" is a variadic function that produces output according
+	to a format. This function writes the output to stdout (standard output).
+	
+	The format string controls the output given, it specifies how subsequent
+	arguments are converted for stdout.
+
+Format of the format string
+
+	This format string is a character string. It is composed of zero or various 
+	directives, these are: normal characters excluding "%" which are copied exact 
+	the same to the output; and the conversion specifications result adding zero
+	or more arguments.
+
+Conversion specification (%)
+
+	Each conversion specification is added using the character % and ends with a 
+	conversion specifier.
+
+Syntax example:
+
+	_printf("My name is %s.", str); ---> My name is <str content>.
+
+	The arguments must correspond with the conversion specifier order. The arguments
+	are used int the order given.
+
+Flags
+
+	The conversion specifier % can be followed by zero or more of these flags:
+
+	#	The value should be converted to an "alternate form".  For
+      	o conversions, the first character of the output string is
+      	made zero (by prefixing a 0 if it was not zero already).
+       	For x and X conversions, a nonzero result has the string
+        	"0x" (or "0X" for X conversions) is prepended to it.
+
+	+	A sign (+ or -) should always be placed before a number
+            produced by a signed conversion.  By default, a sign is
+            used only for negative numbers.  A + overrides a space if
+            both are used.
+
+Conversion specifiers
+	
+	Is a character followed after the % character that specifies the type of 
+	conversion to be applied. The conversion specifiers to _printf are:
+
+	d, i	The int argument is converted to signed decimal notation.
+            The precision, if any, gives the minimum number of digits
+            that must appear.
+
+	o, u, x , X
+		The unsigned int argument is converted to unsigned octal
+             (o), unsigned decimal (u), or unsigned hexadecimal (x and
+             X) notation.  The letters abcdef are used for x
+             conversions; the letters ABCDEF are used for X
+             conversions.  The precision, if any, gives the minimum
+             number of digits that must appear.
+
+	s	 The const char * argument is expected to be a pointer to
+ 		 an array of character type (pointer to a string).  Characters
+             from the array are written up to (but not including) a 
+             terminating null byte ('\0').
+
+	p	The void * pointer argument is printed in hexadecimal.
+
+
+	c	The char argument is expected to be the character to be printed.
+
+	r	The char * is expected to be a pointer to a string. The characters
+		from the array are printed in reverse excluding the null byte ('\0').
+
+	R (ROT-13)
+		The char * is expected to be a pointer to a string. Characters are
+		printed using ROT 13 encryption.
+
+	S	The char * is expected to be an array of chars. Prints a string
+		with non printable characters i.e: "\".
+
+	b	The int is expected to be an int. Prints the number in binary.
+
+RETURN VALUE
+
+	On successful return, the _printf function returns the number of characters
+	printed, excluding the null byte ('\0') used to print strings.
