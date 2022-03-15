@@ -90,7 +90,7 @@ int print_oct(va_list lista)
 }
 
 /**
- * print_adress - print adress
+ * print_adress - imprime la dirección
  * @lista: argumentos
  *
  * Return: cant de char
