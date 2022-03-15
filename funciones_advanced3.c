@@ -47,3 +47,18 @@ int print_nil(void)
 
 	return (5);
 }
+
+/**
+ * print_0 - imprime \0x0
+ * Return: cantidad de caracteres impresos
+ */
+int print_0(void)
+{
+        int i;
+        char *str = "\\0x0";
+
+        for (i = 0; str[i]; i++)
+                _putchar(str[i]);
+
+        return (4);
+}

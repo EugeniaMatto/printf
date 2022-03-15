@@ -83,7 +83,7 @@ int main(void)
 	_printf("\n----------------------\n");
 
  len = _printf("%S\n", "Best\nSchool");
-        len2 = _printf("%S\n", "Best\nSchool    ");
+        len2 = _printf("%S\n", NULL);
         _printf("\nlen = %d,len2 = %d\n", len, len2);
 
 

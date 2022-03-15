@@ -107,7 +107,7 @@ int print_non_print(va_list lista)
 
 	s = va_arg(lista, char*);
 	if (!s)
-		s = "(null)";
+		return (print_0());
 	while (s[cont])
 	{
 		if ((s[cont] > 0 && s[cont] < 32) || (s[cont] >= 127))
@@ -126,18 +126,18 @@ int print_non_print(va_list lista)
 				i++;
 				num_d = num_d / 16;
 			}
-			chars += _putchar('\\');
-			chars += print_base();
+			_putchar('\\');
+			print_base();
 
 			for (i = i - 1; i >= 0; i--)
-			{
-				chars += _putchar(n_h[i]);
-			}
+				_putchar(n_h[i]);
+
+			chars += 4;
 		}
 		else
 			chars += _putchar(s[cont]);
 
 		cont++;
 	}
-	return (cont);
+	return (chars);
 }
