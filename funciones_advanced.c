@@ -96,7 +96,7 @@ int print_oct(va_list lista)
  *
  * Return: cant de char
  */
-int print_adress(__attribute__((unused)) va_list lista)
+int print_adress(va_list lista)
 {
 	return (print_hexadecimal(lista, 3));
 }
