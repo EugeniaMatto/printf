@@ -98,7 +98,6 @@ int print_rot13(va_list lista)
  * Return: 0
  */
 int print_non_print(va_list lista)
-
 {
 	char *s;
 	int resto, i, cont = 0, chars = 0;
@@ -127,7 +126,9 @@ int print_non_print(va_list lista)
 				num_d = num_d / 16;
 			}
 			_putchar('\\');
-			print_base();
+			_putchar('x');
+			if (s[cont] <= 16)
+				_putchar('0');
 
 			for (i = i - 1; i >= 0; i--)
 				_putchar(n_h[i]);
