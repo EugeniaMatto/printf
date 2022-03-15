@@ -106,7 +106,7 @@ int print_non_print(va_list lista)
 
 	s = va_arg(lista, char*);
 	if (!s)
-		return (print_null());
+		s = "(null)";
 	while (s[cont])
 	{
 		if ((s[cont] > 0 && s[cont] < 32))
