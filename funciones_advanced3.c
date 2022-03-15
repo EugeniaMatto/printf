@@ -49,7 +49,7 @@ int print_nil(void)
 }
 
 /**
- * print_0 - imprime \0x0
+ * print_null - imprime null
  * Return: cantidad de caracteres impresos
  */
 int print_null(void)
