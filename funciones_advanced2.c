@@ -113,6 +113,10 @@ int print_non_print(va_list lista)
 		{
 			num_d = (unsigned int)s[cont];
 			i = 0;
+			_printf("\\x");
+			if (s[cont] <= 16)
+				_putchar('0');
+
 			while (num_d != 0)
 			{
 				resto = num_d % 16;
@@ -125,14 +129,8 @@ int print_non_print(va_list lista)
 				i++;
 				num_d = num_d / 16;
 			}
-			_putchar('\\');
-			_putchar('x');
-			if (s[cont] <= 16)
-				_putchar('0');
-
 			for (i = i - 1; i >= 0; i--)
 				_putchar(n_h[i]);
-
 			chars += 4;
 		}
 		else
