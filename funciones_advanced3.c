@@ -55,10 +55,10 @@ int print_nil(void)
 int print_0(void)
 {
         int i;
-        char *str = "\\0x00";
+        char *str = "";
 
         for (i = 0; str[i]; i++)
                 _putchar(str[i]);
 
-        return (5);
+        return (-1);
 }
