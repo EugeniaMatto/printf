@@ -16,7 +16,7 @@ int print_per(__attribute__((unused)) va_list lista)
  * print_char - imprime el caracter que le pasan
  *
  * @lista: argumentos
- * Return: cantidad de caracteres impresos
+ * Return: cantidad de caracteres impresos (1)
  */
 int print_char(va_list lista)
 {
