@@ -48,17 +48,3 @@ int print_nil(void)
 	return (5);
 }
 
-/**
- * print_null - imprime null
- * Return: cantidad de caracteres impresos
- */
-int print_null(void)
-{
-        int i;
-        char *str = "(null)";
-
-        for (i = 0; str[i]; i++)
-                _putchar(str[i]);
-
-        return (6);
-}
