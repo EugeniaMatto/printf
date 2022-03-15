@@ -2,7 +2,7 @@
 /**
  * _printf - print chars
  * @format: format
- * Return: Always 0.
+ * Return: the number of characters printed 
  */
 int _printf(const char *format, ...)
 {
