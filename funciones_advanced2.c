@@ -92,7 +92,7 @@ int print_rot13(va_list lista)
 
 /**
  * print_non_print - imprime la cadena reemplazando caracteres
- * no imprimibles por '\x + su valor ASCII'
+ * no imprimibles por '\x + su valor ASCII en HEXADECIMAL'
  * @lista: argumentos
  *
  * Return: 0
