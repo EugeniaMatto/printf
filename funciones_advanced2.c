@@ -40,6 +40,12 @@ int print_unsigned(va_list lista)
 {
 	int i = 0;
 	unsigned int n = va_arg(lista, unsigned int);
+	
+	if (n == 0)
+	{
+	_putchar('0');
+	return (1);
+	}
 
 	print_unsigned_r(n);
 
