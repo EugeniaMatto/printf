@@ -12,7 +12,7 @@ int _printf(const char *, ...);
 | ------ | ------ |
 | _printf("%s\n", 'Hello!'); | Hello! |
 | _printf("The last letter of Holberton is %c\n", 'n'); | The last letter of Holberton is n|
-| _printf("%d\n"); | 7000 |
+| _printf("%d\n", 7000); | 7000 |
 | _printf("My hand has %i fingers\n", 5); | My hand has 5 fingers |
 | _printf("Address: %p\n", addr); | Address: 0x7ffe637541f0 |
 
